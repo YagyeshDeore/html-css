@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML5 Tag Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>HTML5 Tag Showcase</h1>
+        <nav>
+            <ul>
+                <li><a href="#text">Text Elements</a></li>
+                <li><a href="#media">Media Elements</a></li>
+                <li><a href="#forms">Form Elements</a></li>
+                <li><a href="#tables">Table Elements</a></li>
+                <li><a href="#semantic">Semantic Elements</a></li>
+                <li><a href="#layouts">Layouts</a></li>
+                <li><a href="#transitions-animations">Transitions & Animations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="text">
+            <h2>Text Elements</h2>
+            <p>This is a standard paragraph. <b>This text is bold.</b> <strong>This text is also bold and semantically important.</strong></p>
+            <p><i>This text is italic.</i> <em>This text is also italic and semantically emphasized.</em></p>
+            <p><u>This text is underlined.</u> <ins>This text is also underlined and represents an insertion.</ins></p>
+            <p><s>This text is strikethrough.</s> <del>This text is also strikethrough and represents a deletion.</del></p>
+            <p>This is a <sup>superscript</sup> and this is a <sub>subscript</sub>.</p>
+            <p>This is <small>small text</small> and this is <mark>highlighted text</mark>.</p>
+            <p>Here is an abbreviation: <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
+            <p>This is a quote: <q>To be or not to be.</q></p>
+            <blockquote cite="http://www.worldwildlife.org/who/index.html">
+                For 50 years, WWF has been protecting the future of nature.
+            </blockquote>
+            <p>Code example: <code>&lt;p&gt;Hello, World!&lt;/p&gt;</code></p>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+
+        <section id="media">
+            <h2>Media Elements</h2>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <figure>
+                <img src="https://via.placeholder.com/300x200" alt="Another Placeholder">
+                <figcaption>A placeholder image with a caption.</figcaption>
+            </figure>
+            <audio controls>
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="horse.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+            </video>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+        </section>
+
+        <section id="forms">
+            <h2>Form Elements</h2>
+            <form action="/submit-form" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                    <label for="subscribe">Subscribe to newsletter</label><br>
+                    <label for="cars">Choose a car:</label>
+                    <select id="cars" name="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi">Audi</option>
+                    </select><br>
+                    <textarea name="message" rows="5" cols="30">A message here.</textarea><br>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                    <button type="button" onclick="alert('Hello World!')">Click Me</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="tables">
+            <h2>Table Elements</h2>
+            <table>
+                <caption>Monthly Savings</caption>
+                <colgroup>
+                    <col span="2" style="background-color: #D6EEEE">
+                  </colgroup>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$80</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>$180</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="semantic">
+            <h2>Semantic Elements</h2>
+            <article>
+                <h3>Article Title</h3>
+                <p>This is an article. It can stand on its own.</p>
+            </article>
+            <aside>
+                <h4>Aside</h4>
+                <p>This is some content aside from the main content.</p>
+            </aside>
+            <details>
+                <summary>Details</summary>
+                <p>More information about the details.</p>
+            </details>
+        </section>
+
+        <section id="layouts">
+            <h2>Layouts</h2>
+            <h3>Flexbox</h3>
+            <div class="flex-container">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+            <h3>Grid</h3>
+            <div class="grid-container">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">F</div>
+            </div>
+        </section>
+
+        <section id="transitions-animations">
+            <h2>Transitions and Animations</h2>
+            <div class="transition-box"></div>
+            <div class="animation-box"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer of the page.</p>
+        <address>
+            Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+            Visit us at:<br>
+            Example.com<br>
+            Box 564, Disneyland<br>
+            USA
+        </address>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+/* General Body and Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Header and Navigation */
+header {
+    background: linear-gradient(90deg, #333, #555);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    padding: 10px 0 0;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover, nav a:focus {
+    color: #f0db4f; /* A nice yellow for hover */
+}
+
+/* Main Content and Sections */
+main {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+section {
+    background: #fff;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #333;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 3px solid #f0db4f;
+    padding-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Text Elements Styling */
+p::first-letter {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+p::selection {
+    background: #f0db4f;
+    color: #333;
+}
+
+mark {
+    background: #f0db4f;
+    padding: 2px 4px;
+}
+
+pre {
+    background: #2d2d2d;
+    color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+code {
+    background: #eee;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+blockquote {
+    border-left: 5px solid #f0db4f;
+    padding-left: 20px;
+    margin-left: 0;
+    font-style: italic;
+}
+
+/* Media Elements */
+img, video, svg, canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Form Elements */
+form {
+    margin-top: 20px;
+}
+
+fieldset {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for padding and width */
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background-color: #555;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #f0db4f;
+    box-shadow: 0 0 5px #f0db4f;
+}
+
+/* Table Elements */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #333;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Layouts Section */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+.flex-item {
+    background: #f0db4f;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 5px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 10px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.grid-item {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.grid-item:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+/* Transitions and Animations */
+.transition-box {
+    width: 100px;
+    height: 100px;
+    background: #f0db4f;
+    border-radius: 5px;
+    margin: 20px 0;
+    transition: transform 0.5s ease-in-out, background-color 0.5s;
+}
+.transition-box:hover {
+    transform: rotate(45deg) scale(1.2);
+    background: #c7b33f;
+}
+.animation-box {
+    width: 100px;
+    height: 100px;
+    background: #333;
+    border-radius: 50%;
+    margin: 20px 0;
+    position: relative;
+    animation: moveAround 4s infinite linear;
+}
+
+@keyframes moveAround {
+    0% { left: 0px; top: 0px; background: #333; }
+    25% { left: 200px; top: 0px; background: #f0db4f; }
+    50% { left: 200px; top: 100px; background: #c7b33f; }
+    75% { left: 0px; top: 100px; background: #555; }
+    100% { left: 0px; top: 0px; background: #333; }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #f0db4f;
+}
