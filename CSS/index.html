@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS is Awesome!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <header>
+        <h1>CSS is Awesome!</h1>
+        <p>A showcase of what's possible with just CSS.</p>
+    </header>
+
+    <main>
+        <section id="layouts" class="layout-demo-container">
+            <h2>Layouts: Flexbox, Grid & Container Queries</h2>
+            <div class="layout-container">
+                <div class="flex-container">
+                    <h3>Flexbox</h3>
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+                <div class="grid-container">
+                    <h3>Grid</h3>
+                    <div class="grid-item">A</div>
+                    <div class="grid-item">B</div>
+                    <div class="grid-item">C</div>
+                    <div class="grid-item">D</div>
+                </div>
+            </div>
+            <div class="responsive-card">
+                <img src="https://picsum.photos/id/10/400/300" alt="Random placeholder image">
+                <div class="card-content">
+                    <h4>Responsive Card</h4>
+                    <p>This card's layout changes based on its container's width, thanks to @container queries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="animations">
+            <h2>Animations & Transitions</h2>
+            <div class="anim-container">
+                <div class="pulsing-circle"></div>
+                <button class="hover-button">Hover Me</button>
+            </div>
+        </section>
+
+        <section id="transforms">
+            <h2>3D Transforms</h2>
+            <div class="transform-container">
+                <div class="cube">
+                    <div class="face front">Front</div>
+                    <div class="face back">Back</div>
+                    <div class="face right">Right</div>
+                    <div class="face left">Left</div>
+                    <div class="face top">Top</div>
+                    <div class="face bottom">Bottom</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="visual-effects">
+            <h2>Advanced Visual Effects</h2>
+            <div class="effects-container">
+                <div class="clipped-element">
+                    <p>This shape is created with <code>clip-path</code>.</p>
+                </div>
+                <div class="filtered-element">
+                     <img src="https://picsum.photos/id/1062/400/300" alt="A wolf" class="filtered-image">
+                     <p>Hover to see <code>filter</code> in action.</p>
+                </div>
+                <div class="masked-element">
+                    <p>This element uses <code>mask-image</code> with a gradient for a soft fade effect.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="has-selector">
+            <h2>The :has() Selector</h2>
+            <div class="has-container">
+                <p>The container below will change its style if you check the box, because it <code>:has(&#58;checked)</code>.</p>
+                <div class="has-demo">
+                    <label>
+                        <input type="checkbox">
+                        Check me to change the parent!
+                    </label>
+                    <p>I am a child element.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="selectors">
+            <h2>Advanced Selectors</h2>
+            <div class="selector-container">
+                <p>This is a paragraph.</p>
+                <p class="special">This is a special paragraph.</p>
+                <div>
+                    <p>This paragraph is inside a div.</p>
+                </div>
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="variables">
+            <h2>CSS Variables & @property</h2>
+            <div class="variables-container">
+                <p>This section uses CSS variables for theming.</p>
+                <button id="theme-switcher">Switch Theme (via JS)</button>
+                <div class="houdini-box">
+                    <p>This Box has an animatable gradient thanks to Houdini's <code>@property</code>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created with HTML & CSS</p>
+    </footer>
+
+    <script>
+        // A little bit of JS to make the theme switcher work
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+/*
+    CSS Showcase - Everything is Possible
+    This stylesheet is now structured with Cascade Layers (@layer)
+    to demonstrate modern CSS architecture for managing specificity.
+*/
+
+/* 1. DEFINE LAYER ORDER */
+@layer base, layouts, components, effects, themes;
+
+@layer base {
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --background-color: #ecf0f1;
+        --text-color: #2c3e50;
+        --container-bg: white;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        border-bottom: 2px solid;
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+        border-image: conic-gradient(from 0.5turn at 50% 50%, var(--primary-color), var(--secondary-color), var(--primary-color)) 1;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    footer {
+        text-align: center;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        background-color: var(--text-color);
+        color: var(--background-color);
+    }
+    
+    /* Houdini @property Registration */
+    @property --gradient-start-color {
+      syntax: '<color>';
+      inherits: false;
+      initial-value: #3498db;
+    }
+}
+
+@layer layouts {
+    main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-gap: 2rem;
+    }
+
+    section {
+        background-color: var(--container-bg);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .layout-demo-container {
+        container-type: inline-size;
+    }
+
+    .layout-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    .layout-container > div {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .anim-container,
+    .effects-container,
+    .transform-container,
+    .selector-container,
+    .variables-container,
+    .has-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+@layer components {
+    /* Scroll Progress Bar */
+    #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: var(--secondary-color);
+        transform-origin: 0 50%;
+        z-index: 100;
+    }
+
+    /* Layouts */
+    .flex-container {
+        display: flex;
+        gap: 10px;
+        background: #eee;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .flex-item {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 1rem;
+        border-radius: 4px;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        background: #eee;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .grid-item {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 1rem;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    /* Container Query Card */
+    .responsive-card {
+        background-color: var(--background-color);
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .responsive-card img {
+        max-width: 150px;
+        border-radius: 4px;
+    }
+    .responsive-card .card-content { flex: 1; }
+
+    /* Animations */
+    .pulsing-circle {
+        width: 80px;
+        height: 80px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+    }
+    .hover-button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* 3D Transform */
+    .cube {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    .face {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(52, 152, 219, 0.7);
+        border: 2px solid white;
+        color: white;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .front  { transform: translateZ(75px); }
+    .back   { transform: rotateY(180deg) translateZ(75px); }
+    .right  { transform: rotateY(90deg) translateZ(75px); }
+    .left   { transform: rotateY(-90deg) translateZ(75px); }
+    .top    { transform: rotateX(90deg) translateZ(75px); }
+    .bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+    /* Visual Effects */
+    .clipped-element {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 1rem;
+        display: flex; justify-content: center; align-items: center; text-align: center;
+    }
+    .filtered-element .filtered-image {
+        border-radius: 8px;
+    }
+    .masked-element {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, #e74c3c, #f1c40f);
+        color: white;
+        padding: 1rem;
+        display: flex; justify-content: center; align-items: center; text-align: center;
+    }
+
+    /* Variables & @property */
+    #theme-switcher {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+    .houdini-box {
+        --gradient-end-color: #9b59b6;
+        margin-top: 2rem;
+        padding: 2rem;
+        border-radius: 8px;
+        color: white;
+        background-image: linear-gradient(45deg, var(--gradient-start-color), var(--gradient-end-color));
+    }
+    
+    /* :has() Demo */
+    .has-demo {
+        border: 2px dashed var(--text-color);
+        padding: 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+}
+
+@layer effects {
+    /* Animations */
+    #scroll-progress {
+        animation: scroll-watcher linear;
+        animation-timeline: scroll(root block);
+    }
+    .pulsing-circle { animation: pulse 2s infinite ease-in-out; }
+    .cube { animation: rotate-cube 10s infinite linear; }
+
+    @keyframes scroll-watcher {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+    }
+    @keyframes pulse {
+        0% { transform: scale(0.9); opacity: 0.7; }
+        50% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(0.9); opacity: 0.7; }
+    }
+    @keyframes rotate-cube {
+        from { transform: rotateX(0deg) rotateY(0deg); }
+        to { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    /* Transitions */
+    .hover-button { transition: transform 0.3s ease, background-color 0.3s ease; }
+    .filtered-element .filtered-image { transition: filter 0.5s ease; }
+    #theme-switcher { transition: background-color 0.3s; }
+    .houdini-box { transition: --gradient-start-color 0.5s ease; }
+
+    /* Hover & Interaction States */
+    .hover-button:hover {
+        transform: translateY(-5px) scale(1.05);
+        background-color: #27ae60;
+    }
+    .houdini-box:hover { --gradient-start-color: #e74c3c; }
+    .filtered-element:hover .filtered-image { filter: grayscale(0%) blur(0) contrast(100%); }
+    #theme-switcher:hover { background-color: #2980b9; }
+
+    /* Advanced Selectors */
+    .selector-container p:not(.special) { font-style: italic; }
+    .selector-container div > p { text-decoration: underline; text-decoration-color: var(--secondary-color); }
+    .selector-container ul li:nth-child(odd) { color: var(--primary-color); font-weight: bold; }
+    
+    /* :has() selector */
+    .has-demo:has(input:checked) {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        border-style: solid;
+        color: white;
+    }
+    
+    /* Visual Effects */
+    .clipped-element { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    .filtered-element .filtered-image { filter: grayscale(100%) blur(2px) contrast(80%); }
+    .masked-element { mask-image: linear-gradient(to top, transparent, black 100%); }
+
+    /* Container Queries */
+    @container (max-width: 600px) {
+        .responsive-card {
+            flex-direction: column;
+            text-align: center;
+        }
+        .responsive-card img { max-width: 100%; }
+        #layouts h2 { border-image: conic-gradient(from 0.5turn at 50% 50%, #e74c3c, #f1c40f, #e74c3c) 1; }
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+        header h1 { font-size: 2.5rem; }
+        main { margin: 1rem auto; }
+        .layout-container { flex-direction: column; }
+    }
+}
+
+@layer themes {
+    body.dark-theme {
+        --primary-color: #9b59b6;
+        --secondary-color: #1abc9c;
+        --background-color: #2c3e50;
+        --text-color: #ecf0f1;
+        --container-bg: #34495e;
+    }
+    body.dark-theme #theme-switcher:hover {
+        background-color: #8e44ad;
+    }
+}
